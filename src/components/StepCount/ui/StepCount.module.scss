@@ -1,0 +1,22 @@
+.stepsWrapper{
+  display: flex;
+  column-gap: 5px;
+}
+
+.step{
+  display: block;
+  width: 30px;
+  height: 3px;
+}
+
+.prevStep{
+  background: var(--primary-black);
+}
+
+.currentStep{
+  background: var(--primary-red);
+}
+
+.nextStep{
+  background: var(--gray);
+}

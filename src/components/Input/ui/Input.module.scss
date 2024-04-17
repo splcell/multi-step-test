@@ -1,0 +1,38 @@
+.checkboxWrapper, .radioWrapper {
+  position: relative;
+}
+
+.checkbox .radio {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
+.checkbox:checked + .checkSpan{
+  background-color: var(--primary-red);
+  background-image: url(../../../assets/checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.radio, .checkbox{
+  display: none;
+}
+
+.radio:checked + .radioSpan{
+  background-color: var(--primary-red);
+}
+
+.checkSpan, .radioSpan{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -25px;
+  border: 1px solid var(--gray)
+}
+
+.radioSpan{
+  border-radius: 50%;
+}
