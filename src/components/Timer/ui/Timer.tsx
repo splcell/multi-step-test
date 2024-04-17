@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Countdown from 'react-countdown';
 import { useNavigate } from 'react-router-dom';
 
 interface TimerProps{
   startMilliseconds: number;
   isHours?: boolean;
+}
+
+interface TimerRenderProps {
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
 }
 
 export const Timer = ({startMilliseconds, isHours = false}: TimerProps) => {
@@ -32,7 +39,7 @@ export const Timer = ({startMilliseconds, isHours = false}: TimerProps) => {
     return () => clearInterval(interval);
   }, [timeLeft]);
 
-  const renderer = ({ hours, minutes, seconds, completed }) => {
+  const renderer = ({ hours, minutes, seconds, completed }: TimerRenderProps) => {
     if(completed){
       localStorage.removeItem('countdownTime')
       navigate('/fail')

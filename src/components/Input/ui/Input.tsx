@@ -10,9 +10,7 @@ interface InputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = memo(({ type, value, setValue, label, ...props }: InputProps) => {
-  // eslint-disable-next-line
   const [isChecked, setIsChecked] = useState(false);
-  // eslint-disable-next-line
   const [isRadioChecked, setRadioChecked] = useState(false)
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
